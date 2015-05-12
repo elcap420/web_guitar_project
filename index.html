@@ -2,22 +2,59 @@
 <html>
 <head>
     <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
-    <title>Image Gallery</title>
+    <title>A Brief History of the Electric Guitar</title>
 </head>
 <body>
-    <h1>Image Gallery</h1>
+
+    <div id="overlay" class="hidden">
+        <img src="" alt="" class="overlay-image"/>
+        <span class="image-description">
+            <h1 class="description-title"></h1>
+            <span class="description-text"></span>
+        </span>
+        <span id="next"><img src="images/Arrow_right-512.png"></span>
+        <span id="prev"><img src="images/Arrow_right-512.png"></span>
+    </div>
+
+    <h1>A Brief History of the Electric Guitar</h1>
     <ul id="imageGallery">
-        <li><a href="images/Alembic_Tiger.jpg"><img src="images/Alembic_Tiger.jpg" width="100" alt="Refferal Machine By Matthew Spiel"></a></li>
-        <li><a href="images/Rickenbacker-Frying-Pan.jpg"><img src="images/Rickenbacker-Frying-Pan.jpg" width="100" alt="Space Juice by Mat Helme"></a></li>
-        <li><a href="images/education.png"><img src="images/education.png" width="100" alt="Education by Chris Michel"></a></li>
-        <li><a href="images/copy_mcrepeatsalot.png"><img src="images/copy_mcrepeatsalot.png" width="100" alt="Wanted: Copy McRepeatsalot by Chris Michel"></a></li>
-        <li><a href="images/sebastian.png"><img src="images/sebastian.png" width="100" alt="Sebastian by Mat Helme"></a></li>
-        <li><a href="images/skill-polish.png"><img src="images/skill-polish.png" width="100" alt="Skill Polish by Chris Michel"></a></li>
-        <li><a href="images/chuck.png"><img src="images/chuck.png" width="100" alt="Chuck by Mat Helme"></a></li>
-        <li><a href="images/library.png"><img src="images/library.png" width="100" alt="Library by Tyson Rosage"></a></li>
-        <li><a href="images/boat.png"><img src="images/boat.png" width="100" alt="Boat by Griffin Moore"></a></li>
-        <li><a href="images/illustrator_foundations.png"><img src="images/illustrator_foundations.png" width="100" alt="Illustrator Foundations by Matthew Spiel"></a></li>
-        <li><a href="images/treehouse_shop.jpg"><img src="images/treehouse_shop.jpg" width="100" alt="Treehouse Shop by Eric Smith"></a></li>
+        
+        <li><a href="images/a_rickenbacker-frying-pan.jpg"><img src="images/a_rickenbacker-frying-pan.jpg" alt="The first electric guitar. The RickenBacker Frying Pan"></a></li>
+
+        <li><a href="images/b_gibson_log_1946.jpg"><img src="images/b_gibson_log_1946.jpg" alt="In 1946 Les Paul created this guitar, nicknamed 'The Log', which was to be the first electric guitar for the Gibson guitar company."></a></li>
+
+        <li><a href="images/c_fender_broadcaster_1950.jpg"><img src="images/c_fender_broadcaster_1950.jpg" alt="The Broadcaster was the flagship Fender guitar and was renamed the Telecaster after there was a dipute over the name Broadcaster already existing under copyright. The Telecaster is still an extremely populare guitar today."></a></li>
+
+        <li><a href="images/d_fender_strat_number1.jpg"><img src="images/d_fender_strat_number1.jpg" alt="This is perhaps the very first of the famous Fender Stratocaster line which is currently owned by David Gilmour."></a></li>
+
+        <li><a href="images/h_gibson_es_175.jpg"><img src="images/h_gibson_es_175.jpg" alt="This is one of Gibsons early Electric designs. A fully Hollowbody single cutaway."></a></li>
+
+        <li><a href="images/e_gibson_gold_56.jpg
+        "><img src="images/e_gibson_gold_56.jpg"  alt="The early Les Paul's were mostly made in the Gold Top color and before the PAF Humbucker design they were fitted with P-90s"></a></li>
+
+        <li><a href="images/f_gibson_goldtop_duane_allman_57.jpg"><img src="images/f_gibson_goldtop_duane_allman_57.jpg" alt="Chuck by Mat Helme"></a></li>
+
+        <li><a href="images/g_gibson_59_flyingV.jpg"><img src="images/g_gibson_59_flyingV.jpg" alt="Library by Tyson Rosage"></a></li>
+
+        <li><a href="images/i_gretsch_country_gent.JPG"><img src="images/i_gretsch_country_gent.JPG" alt="Illustrator Foundations by Matthew Spiel"></a></li>
+
+        <li><a href="images/j_gibson_sg_Les_Paul_1961_big.jpg"><img src="images/j_gibson_sg_Les_Paul_1961_big.jpg" alt="Treehouse Shop by Eric Smith"></a></li>
+
+        <li><a href="images/k_rick_12.JPG"><img src="images/k_rick_12.JPG" alt="Skill Polish by Chris Michel"></a></li>
+
+        <li><a href="images/alembic_tiger.jpg" data-description="This guitar was created by the Alembic Guitar company in 1973 for Jerry Garcia of the Grateful Dead"><img src="images/alembic_tiger.jpg" alt="Alembic Tiger" ></a></li>
+
+        <li><a href="images/SW1.jpg"><img src="images/SW1.jpg" alt="Chuck by Mat Helme"></a></li>
+
+        <li><a href="images/sw_fathom-935.jpg"><img src="images/sw_fathom-935.jpg" alt="Library by Tyson Rosage"></a></li>
+
+        <li><a href="images/sf_blackbird.jpg"><img src="images/sf_blackbird.jpg" alt="Boat by Griffin Moore"></a></li>
+
+        <li><a href="images/sf_kelliher.jpg"><img src="images/sf_kelliher.jpg" alt="Illustrator Foundations by Matthew Spiel"></a></li>
+
+
+       
+
     </ul>
     <script src="http://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/app.js" type="text/javascript" charset="utf-8"></script>
