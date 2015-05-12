@@ -15,6 +15,23 @@
 
 // //add overlay to body
 // $("body").append($overlay);
+
+
+//Links secondary musician images 
+var data = 
+{
+"rick12":
+	[
+		{
+			name: "George Harrison",
+			src: "images/musician_george_rick.jpg"
+		}
+	]
+}
+
+
+
+
 var imageArray = [];
 var currentImageIndex;
 
@@ -35,16 +52,9 @@ $("#imageGallery a").click(function(event){
 
 //Adding prev and next feature to overlay
 $("#overlay").click(function ($event){
-	var next = $("#next")[0];
-	var prev = $("#prev")[0];
-	var isNext = $event.target === next || $.contains(next, $event.target);
-	var isPrev = $event.target === prev || $.contains(prev, $event.target);
-	console.log(!isNext && !isPrev);
-	if(!isNext && !isPrev)
-    {
+
 		$("#overlay").removeClass("visible");
 		$("#overlay").addClass("hidden");
-	}
 });
 
 
@@ -83,18 +93,43 @@ linkImages.load(function (event)
 
 var showOverlay = function($index)
 {
+	//Stops the prev and next buttons at final image count
 	if($index < 0 || $index > imageArray.length - 1)
 	{
 		return;
 	}
-
-
 
 	currentImageIndex = $index;
 	var imageGalleryLink = $(imageArray[currentImageIndex]);
 	var captionText = imageGalleryLink.children("img").attr("alt");//desription title
 	var imageLoc = imageGalleryLink.attr("href");
 	var display = imageGalleryLink.children("img").attr("data-display");
+	var name = imageGalleryLink.attr("data-name");
+	var thumbs = $(".thumbs");
+	thumbs.empty();
+
+
+	if(data[name])
+	{
+		var currentImageThumb = function ($src)
+		{
+			var thumbnail = document.createElement("img");
+			thumbs.append(thumbnail);
+			$(thumbnail).attr("src", $src);
+			$(thumbnail).click(function ($event) 
+			{
+				$event.stopPropagation();
+				$(".overlay-image").attr("src", $src);
+			});
+		}
+
+		currentImageThumb(imageLoc);
+		for(var i = 0; i<data[name].length; i++)
+		{
+			currentImageThumb(data[name][i].src);
+		}
+	}
+
 	$(".overlay-image").attr("data-display", display);
 	$("#overlay").removeClass("hidden");
 	$("#overlay").addClass("visible");
@@ -103,13 +138,15 @@ var showOverlay = function($index)
 	$(".description-text").text(imageGalleryLink.attr("data-description"));
 };
 
-$("#next").click(function()
+$("#next").click(function ($event)
 {
-showOverlay(currentImageIndex + 1);
+	$event.stopPropagation();
+	showOverlay(currentImageIndex + 1);
 });
 
-$("#prev").click(function()
+$("#prev").click(function ($event)
 {
+	$event.stopPropagation();
 	showOverlay(currentImageIndex - 1);
 });
 	// //update overlay with larger image with alt attribute.

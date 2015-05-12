@@ -130,6 +130,11 @@ margin: 0 30px;
   -ms-filter: "FlipH";
 }
 
+.thumbs img
+{
+  width: 60px;
+}
+
 
 
 
